@@ -60,6 +60,15 @@
 
     <h1>Encrypted File Sharing</h1>
 
+    <% if (locals.fileLink != null) { %>
+        <div style="margin-bottom: 1rem;">
+            Your file is uploaded
+            here is the link
+            <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+        </div>
+    <% } %>
+
+
     <form action="/upload" method="post" enctype="multipart/form-data">
         <label for="file">File:</label>
         <input type="file" id="file" name="file" required />
